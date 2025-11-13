@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikTok Pro Advisor - Domina las Ventas en TikTok</title>
+    <style>
+      :root {
+        --primary: #000000;
+        --secondary: #ffffff;
+        --accent: #fe2c55;
+        --accent-light: #ff7a9e;
+        --accent-blue: #25f4ee;
+        --gray-light: #f8f8f8;
+        --gray: #a8a8a8;
+        --gray-dark: #3d3d3d;
+      }
+
+      /* Estilos generales */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--primary);
+        color: var(--secondary);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: var(--accent);
+        color: var(--secondary);
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+      }
+
+      .btn:hover {
+        background-color: var(--accent-light);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(254, 44, 85, 0.3);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        border: 2px solid var(--secondary);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--secondary);
+        color: var(--primary);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .gradient-text {
+        background: linear-gradient(45deg, var(--accent), var(--accent-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* Header y Navegación CORREGIDO */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        padding: 20px 0;
+        transition: all 0.3s ease;
+      }
+
+      header.scrolled {
+        padding: 15px 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--secondary);
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      /* NAVEGACIÓN ESCRITORIO - visible por defecto */
+      .desktop-nav {
+        display: flex;
+      }
+
+      .desktop-nav ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+      }
+
+      .desktop-nav ul li {
+        margin-left: 30px;
+      }
+
+      .desktop-nav ul li a {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .desktop-nav ul li a:hover {
+        color: var(--accent);
+      }
+
+      /* MENÚ MÓVIL - oculto por defecto */
+      .mobile-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--secondary);
+      }
+
+      .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--primary);
+        z-index: 1001;
+        padding: 80px 30px 30px;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .mobile-nav.active {
+        right: 0;
+      }
+
+      .mobile-nav ul {
+        list-style: none;
+      }
+
+      .mobile-nav ul li {
+        margin-bottom: 25px;
+      }
+
+      .mobile-nav ul li a {
+        color: var(--secondary);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+        display: block;
+        padding: 10px 0;
+      }
+
+      .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--secondary);
+        background: none;
+        border: none;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding-top: 150px;
+        padding-bottom: 100px;
+        background: linear-gradient(135deg, var(--primary) 0%, #1a1a1a 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          rgba(254, 44, 85, 0.1) 0%,
+          rgba(0, 0, 0, 0) 70%
+        );
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .hero-text {
+        flex: 1;
+        padding-right: 50px;
+      }
+
+      .hero-image {
+        flex: 1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .tiktok-mockup {
+        position: relative;
+        width: 300px;
+        height: 600px;
+      }
+
+      .phone-mockup {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        border-radius: 40px;
+        border: 3px solid #fe2c55;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(254, 44, 85, 0.3);
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .phone-notch {
+        width: 60%;
+        height: 25px;
+        background: #000;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+
+      .tiktok-content {
+        padding: 40px 20px 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(45deg, #000, #1a1a1a);
+      }
+
+      .video-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+      }
+
+      .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #fe2c55, #25f4ee);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .user-name {
+        color: white;
+        font-weight: 500;
+      }
+
+      .follow-btn {
+        background: #fe2c55;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      .live-stats {
+        display: flex;
+        justify-content: space-around;
+        margin: 30px 0;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-icon {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+      }
+
+      .stat-number {
+        color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .sales-message {
+        background: rgba(254, 44, 85, 0.1);
+        border: 1px solid #fe2c55;
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .product-tag {
+        background: #fe2c55;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .sales-message h4 {
+        color: white;
+        margin: 10px 0;
+        font-size: 1.2rem;
+      }
+
+      .sales-message p {
+        color: #ccc;
+        margin: 5px 0;
+      }
+
+      .price {
+        color: #25f4ee;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .sales-progress {
+        margin-top: 20px;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: #333;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+
+      .progress-fill {
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, #fe2c55, #25f4ee);
+        border-radius: 4px;
+        animation: progressPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes progressPulse {
+        0%,
+        100% {
+          width: 50%;
+        }
+        50% {
+          width: 55%;
+        }
+      }
+
+      .progress-text {
+        color: #ccc;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .interaction-buttons {
+        position: absolute;
+        right: 15px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .tiktok-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease;
+      }
+
+      .tiktok-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .results-badge {
+        position: absolute;
+        top: -20px;
+        right: -30px;
+        background: linear-gradient(45deg, #fe2c55, #25f4ee);
+        border-radius: 20px;
+        padding: 15px;
+        box-shadow: 0 10px 30px rgba(254, 44, 85, 0.4);
+        animation: badgeFloat 4s ease-in-out infinite;
+      }
+
+      @keyframes badgeFloat {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(-5deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(5deg);
+        }
+      }
+
+      .badge-content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .badge-icon {
+        font-size: 2rem;
+      }
+
+      .badge-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      .badge-subtitle {
+        font-size: 0.8rem;
+        color: white;
+        opacity: 0.9;
+      }
+
+      /* Animaciones para los números */
+      @keyframes countUp {
+        from {
+          transform: translateY(10px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .stat-number {
+        animation: countUp 1s ease-out;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* Servicios Section */
+      .services {
+        background-color: var(--gray-light);
+        color: var(--primary);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .service-card {
+        background-color: var(--secondary);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: var(--accent);
+      }
+
+      /* Testimonios Section */
+      .testimonials {
+        background-color: var(--primary);
+      }
+
+      .testimonial-slider {
+        margin-top: 50px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonial-track {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .testimonial-slide {
+        min-width: 100%;
+        padding: 0 20px;
+      }
+
+      .testimonial-card {
+        background-color: var(--gray-dark);
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--accent);
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .slider-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--gray);
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .slider-dot.active {
+        background-color: var(--accent);
+      }
+
+      /* FAQ Section */
+      .faq {
+        background-color: var(--primary);
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--gray-dark);
+      }
+
+      .faq-question {
+        padding: 20px 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+      }
+
+      .faq-answer {
+        padding-bottom: 20px;
+        display: none;
+      }
+
+      .faq-item.active .faq-answer {
+        display: block;
+      }
+
+      .faq-toggle {
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-toggle {
+        transform: rotate(45deg);
+      }
+
+      /* CTA Section */
+      .cta {
+        background: linear-gradient(
+          135deg,
+          var(--accent) 0%,
+          var(--accent-blue) 100%
+        );
+        color: var(--secondary);
+        text-align: center;
+        padding: 100px 0;
+      }
+
+      .cta h2 {
+        margin-bottom: 30px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #0a0a0a;
+        padding: 60px 0 30px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      .footer-column {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 30px;
+      }
+
+      .footer-column h3 {
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      .social-links {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--gray-dark);
+        color: var(--secondary);
+        margin-right: 10px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .social-link:hover {
+        background-color: var(--accent);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid var(--gray-dark);
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        h1 {
+          font-size: 2.8rem;
+        }
+
+        h2 {
+          font-size: 2.2rem;
+        }
+
+        .hero-content {
+          flex-direction: column;
+        }
+
+        .hero-text {
+          padding-right: 0;
+          margin-bottom: 50px;
+          text-align: center;
+        }
+
+        .pricing-card.featured {
+          transform: scale(1);
+        }
+
+        .pricing-card.featured:hover {
+          transform: translateY(-10px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* Ocultar navegación de escritorio en móvil */
+        .desktop-nav {
+          display: none;
+        }
+
+        /* Mostrar menú hamburguesa en móvil */
+        .mobile-menu {
+          display: block;
+        }
+      }
+
+      @media (max-width: 576px) {
+        h1 {
+          font-size: 2.2rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+
+        .btn {
+          padding: 12px 25px;
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="container header-container">
+        <a href="#" class="logo">TikTok<span>Pro</span>Advisor</a>
+
+        <!-- Navegación Escritorio -->
+        <nav class="desktop-nav">
+          <ul>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#testimonials">Testimonios</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact" class="btn">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Menú Móvil -->
+        <div class="mobile-menu" id="mobileMenu">☰</div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="close-menu" id="closeMenu">×</button>
+      <ul>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#testimonials">Testimonios</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>
+            Domina <span class="gradient-text">TikTok</span> y Convierte
+            Seguidores en Clientes
+          </h1>
+          <p>
+            Aprende las estrategias probadas para crear contenido viral,
+            configurar tu cuenta de ventas, y realizar lives que generen
+            ingresos reales.
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20la%20consulta%20gratuita%20de%20TikTokProAdvisor"
+              class="btn"
+              target="_blank"
+              >Consulta Gratuita</a
+            >
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="tiktok-mockup">
+            <div class="phone-mockup">
+              <!-- Parte superior del teléfono -->
+              <div class="phone-notch"></div>
+
+              <!-- Contenido del TikTok -->
+              <div class="tiktok-content">
+                <!-- Header del video -->
+                <div class="video-header">
+                  <div class="user-info">
+                    <div class="user-avatar">TP</div>
+                    <div class="user-name">@tuemprendimiento</div>
+                  </div>
+                  <div class="follow-btn">+ Seguir</div>
+                </div>
+
+                <!-- Video stats en tiempo real -->
+                <div class="live-stats">
+                  <div class="stat">
+                    <div class="stat-icon">👀</div>
+                    <div class="stat-number" id="viewers">2.5K</div>
+                  </div>
+                  <div class="stat">
+                    <div class="stat-icon">❤️</div>
+                    <div class="stat-number" id="likes">1.2K</div>
+                  </div>
+                  <div class="stat">
+                    <div class="stat-icon">💬</div>
+                    <div class="stat-number" id="comments">347</div>
+                  </div>
+                </div>
+
+                <!-- Mensaje de venta -->
+                <div class="sales-message">
+                  <div class="product-tag">🔥 EN VIVO</div>
+                  <h4>¡ÚLTIMAS 5 UNIDADES!</h4>
+                  <p>Producto exclusivo</p>
+                  <div class="price">$49.99</div>
+                </div>
+
+                <!-- Barra de progreso de ventas -->
+                <div class="sales-progress">
+                  <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                  </div>
+                  <div class="progress-text">5 vendidos de 10</div>
+                </div>
+              </div>
+
+              <!-- Botones de interacción -->
+              <div class="interaction-buttons">
+                <div class="tiktok-btn">❤️</div>
+                <div class="tiktok-btn">💬</div>
+                <div class="tiktok-btn">📤</div>
+              </div>
+            </div>
+
+            <!-- Badge de resultados -->
+            <div class="results-badge">
+              <div class="badge-content">
+                <div class="badge-icon">🎯</div>
+                <div class="badge-text">
+                  <div class="badge-title">+425%</div>
+                  <div class="badge-subtitle">Crecimiento</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="text-center">¿Qué Aprenderás?</h2>
+        <p class="text-center">
+          Nuestras asesorías cubren todos los aspectos para que domines TikTok
+          como un profesional
+        </p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3>Creación y configuración de Cuenta</h3>
+            <p>
+              Crea y configura tu cuenta de Tiktok Shop, para llegar a millones
+              de compradores activos diariamente.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🎬</div>
+            <h3>Creación de Contenido</h3>
+            <p>
+              Domina la creación de videos virales, edición, sonidos trending y
+              formatos que enganchan a tu audiencia.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔴</div>
+            <h3>TikTok Live Profesional</h3>
+            <p>
+              Aprende a realizar transmisiones efectivas que convierten
+              espectadores en clientes y aumentan tus ventas.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">📈</div>
+            <h3>Estrategias de Crecimiento</h3>
+            <p>
+              Descubre técnicas avanzadas para aumentar seguidores, engagement y
+              construir una comunidad leal.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">💰</div>
+            <h3>Monetización</h3>
+            <p>
+              Implementa estrategias probadas para generar ingresos a través de
+              productos, servicios o afiliaciones.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Análisis y Métricas</h3>
+            <p>
+              Interpreta las analíticas de TikTok para optimizar tu contenido y
+              maximizar resultados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="text-center">Lo Que Dicen Nuestros Clientes</h2>
+        <p class="text-center">
+          Empresarios y creadores que han transformado su presencia en TikTok
+        </p>
+
+        <div class="testimonial-slider">
+          <div class="testimonial-track" id="testimonialTrack">
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Gracias a las asesorías, pasé de 500 a 50,000 seguidores en 3
+                  meses y ahora genero ventas consistentes a través de mis
+                  TikTok Lives. ¡Increíble!"
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">A</div>
+                  <div>
+                    <h4>Ana Martínez</h4>
+                    <p>Emprendedora de Moda</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "No sabía por dónde empezar en TikTok. Con la mentoría aprendí
+                  a crear contenido que realmente conecta y ahora tengo una
+                  comunidad activa que compra mis productos."
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">C</div>
+                  <div>
+                    <h4>Carlos Rodríguez</h4>
+                    <p>Coach de Fitness</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Las estrategias de TikTok Live cambiaron completamente mi
+                  negocio. Ahora realizo ventas directas durante mis
+                  transmisiones con excelentes resultados."
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">M</div>
+                  <div>
+                    <h4>María González</h4>
+                    <p>Artista y Creativa</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider-nav">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <h2 class="text-center">Preguntas Frecuentes</h2>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Necesito experiencia previa en TikTok?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                No, nuestras asesorías están diseñadas para adaptarse a todos
+                los niveles, desde principiantes absolutos hasta usuarios con
+                experiencia que buscan llevar su cuenta al siguiente nivel.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Cuánto tiempo tardaré en ver resultados?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                La mayoría de nuestros clientes ven mejoras significativas en su
+                engagement y crecimiento de seguidores en las primeras 2-4
+                semanas después de implementar las estrategias aprendidas.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Las sesiones son individuales o grupales?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Todas nuestras sesiones son individuales y personalizadas según
+                tus objetivos específicos, tu nicho y tu nivel actual de
+                experiencia.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Ofrecen garantía?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Sí, ofrecemos una garantía de satisfacción del 100%. Si después
+                de tu primera sesión no estás completamente satisfecho, te
+                reembolsamos tu inversión.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Qué necesito para comenzar?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Solo necesitas una cuenta de TikTok (puede ser nueva), un
+                dispositivo con cámara (teléfono es suficiente) y las ganas de
+                aprender y aplicar lo que enseñamos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <h2>¿Listo para Dominar TikTok?</h2>
+        <p>
+          Reserva tu sesión de consultoría gratuita de 30 minutos y descubre
+          cómo podemos ayudarte a alcanzar tus objetivos
+        </p>
+        <a
+          href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20la%20consulta%20gratuita%20de%20TikTokProAdvisor"
+          class="btn btn-secondary"
+          target="_blank"
+          >Agendar Consulta Gratuita</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>TikTokProAdvisor</h3>
+            <p>
+              Especialistas en estrategias de crecimiento y ventas en TikTok
+              para emprendedores y negocios.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link">📘</a>
+              <a href="#" class="social-link">📷</a>
+              <a href="#" class="social-link">🐦</a>
+              <a href="#" class="social-link">📺</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Enlaces Rápidos</h3>
+            <ul class="footer-links">
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="#testimonials">Testimonios</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+              <li><a href="#">Términos y Condiciones</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+              <li><a href="#">Política de Cookies</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contacto</h3>
+            <ul class="footer-links">
+              <li>Email: hola@tiktokproadvisor.com</li>
+              <li>Teléfono: +1 234 567 890</li>
+              <li>Horario: Lunes a Viernes 9:00 - 18:00</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2023 TikTokProAdvisor. Todos los derechos reservados. TikTok
+            es una marca registrada de sus respectivos propietarios. No estamos
+            afiliados oficialmente con TikTok.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile menu toggle
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileNav = document.getElementById("mobileNav");
+      const closeMenu = document.getElementById("closeMenu");
+
+      mobileMenu.addEventListener("click", function () {
+        mobileNav.classList.add("active");
+      });
+
+      closeMenu.addEventListener("click", function () {
+        mobileNav.classList.remove("active");
+      });
+
+      // Cerrar menú al hacer clic en un enlace
+      const mobileLinks = document.querySelectorAll(".mobile-nav a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          mobileNav.classList.remove("active");
+        });
+      });
+
+      // Testimonial slider
+      const testimonialTrack = document.getElementById("testimonialTrack");
+      const dots = document.querySelectorAll(".slider-dot");
+      let currentSlide = 0;
+
+      function goToSlide(slideIndex) {
+        testimonialTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+        // Update dots
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[slideIndex].classList.add("active");
+
+        currentSlide = slideIndex;
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", function () {
+          const slideIndex = parseInt(this.getAttribute("data-slide"));
+          goToSlide(slideIndex);
+        });
+      });
+
+      // Auto slide
+      setInterval(() => {
+        let nextSlide = currentSlide + 1;
+        if (nextSlide >= dots.length) nextSlide = 0;
+        goToSlide(nextSlide);
+      }, 5000);
+
+      // FAQ accordion
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach((item) => {
+        const question = item.querySelector(".faq-question");
+
+        question.addEventListener("click", () => {
+          // Close all other items
+          faqItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+            }
+          });
+
+          // Toggle current item
+          item.classList.toggle("active");
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            // Close mobile menu if open
+            mobileNav.classList.remove("active");
+
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
