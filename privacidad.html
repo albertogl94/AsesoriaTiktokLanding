@@ -4,73 +4,137 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Política de Privacidad - TikTalent</title>
+    <!-- Fuente Inter (La misma del sitio principal) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
+      rel="stylesheet" />
+
     <style>
+      :root {
+        --bg-dark: #050505;
+        --bg-card: #121212;
+        --text-main: #ffffff;
+        --text-muted: #a1a1aa;
+        --accent-cyan: #00f2ea;
+        --accent-pink: #ff0050;
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Inter", sans-serif;
       }
 
       body {
-        background-color: #000;
-        color: #fff;
-        line-height: 1.6;
-        padding: 20px;
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        line-height: 1.8;
+        padding: 40px 20px;
       }
 
-      .container {
+      /* Contenedor estilo "Glass/Card" */
+      .legal-container {
         max-width: 800px;
-        margin: 0 auto;
-        background: #1a1a1a;
-        padding: 40px;
-        border-radius: 15px;
-        margin-top: 80px;
+        margin: 40px auto;
+        background: var(--bg-card);
+        padding: 50px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Glow decorativo detrás */
+      .legal-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--accent-cyan),
+          var(--accent-pink)
+        );
       }
 
       h1 {
-        color: #fe2c55;
-        margin-bottom: 30px;
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 40px;
         text-align: center;
+        background: linear-gradient(90deg, #fff, #ccc);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
 
       h2 {
-        color: #25f4ee;
-        margin: 25px 0 15px 0;
+        color: var(--accent-cyan);
+        font-size: 1.4rem;
+        margin: 30px 0 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
       }
 
-      p {
+      p,
+      li {
+        color: var(--text-muted);
         margin-bottom: 15px;
-        color: #ccc;
+        font-size: 1rem;
       }
 
       ul {
-        margin: 15px 0 15px 30px;
-        color: #ccc;
+        margin-left: 20px;
+        margin-bottom: 20px;
       }
 
-      li {
-        margin-bottom: 10px;
-        line-height: 1.5;
+      li::marker {
+        color: var(--accent-pink);
       }
 
+      /* Botón de volver */
       .back-btn {
         display: inline-block;
-        padding: 10px 20px;
-        background: #fe2c55;
+        margin-top: 40px;
+        padding: 12px 30px;
+        background: transparent;
+        border: 2px solid var(--accent-pink);
         color: white;
         text-decoration: none;
-        border-radius: 25px;
-        margin-top: 20px;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        background: var(--accent-pink);
+        box-shadow: 0 0 20px rgba(255, 0, 80, 0.4);
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        .legal-container {
+          padding: 30px 20px;
+        }
+        h1 {
+          font-size: 2rem;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="legal-container">
       <h1>Política de Privacidad</h1>
 
       <h2>1. Información que Recopilamos</h2>
-      <p>Recopilamos información que nos proporcionas directamente:</p>
+      <p>
+        Recopilamos información que nos proporcionas directamente para poder
+        brindarte la mejor asesoría:
+      </p>
       <ul>
         <li>Nombre y apellido</li>
         <li>Dirección de correo electrónico</li>
@@ -78,36 +142,44 @@
       </ul>
 
       <h2>2. Uso de la Información</h2>
-      <p>Utilizamos tu información para:</p>
+      <p>Utilizamos tu información estrictamente para:</p>
       <ul>
-        <li>Proveer los servicios de asesoría</li>
-        <li>Comunicarnos contigo sobre tu progreso</li>
-        <li>Enviar materiales y recursos</li>
-        <li>Mejorar nuestros servicios</li>
+        <li>Proveer los servicios de asesoría contratados.</li>
+        <li>Comunicarnos contigo sobre tu progreso y agendar sesiones.</li>
+        <li>Enviar materiales educativos, plantillas y recursos exclusivos.</li>
+        <li>Mejorar la calidad de nuestros servicios internos.</li>
       </ul>
 
       <h2>3. Protección de Datos</h2>
       <p>
-        Implementamos medidas de seguridad para proteger tu información personal
-        contra accesos no autorizados.
+        Implementamos medidas de seguridad digitales estándar para proteger tu
+        información personal contra accesos no autorizados, alteración o
+        divulgación.
       </p>
 
-      <h2>4. Cookies y Tecnologías Similares</h2>
+      <h2>4. Cookies y Tecnologías</h2>
       <p>
-        Nuestro sitio web no utiliza cookies de seguimiento. Solo utilizamos
-        tecnologías esenciales para el funcionamiento básico del sitio.
+        Nuestro sitio web respeta tu privacidad. No utilizamos cookies de
+        seguimiento invasivas. Solo utilizamos tecnologías esenciales para el
+        funcionamiento básico del sitio y la analítica anónima.
       </p>
 
       <h2>5. Tus Derechos</h2>
       <p>
-        Tienes derecho a acceder, rectificar y eliminar tu información personal.
-        Contáctanos para ejercer estos derechos.
+        Tienes derecho a acceder, rectificar y eliminar tu información personal
+        de nuestra base de datos en cualquier momento. Contáctanos directamente
+        para ejercer estos derechos.
       </p>
 
       <h2>6. Contacto</h2>
-      <p>Para preguntas sobre esta política: hola@tiktalent.com</p>
+      <p>
+        Para cualquier duda referente a esta política, escríbenos a:
+        <strong style="color: white">hola@tiktalent.mx</strong>
+      </p>
 
-      <a href="index.html" class="back-btn">← Volver al Inicio</a>
+      <div style="text-align: center">
+        <a href="index.html" class="back-btn">← Volver al Inicio</a>
+      </div>
     </div>
   </body>
 </html>

@@ -4,111 +4,193 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Términos y Condiciones - TikTalent</title>
+    <!-- Fuente Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
+      rel="stylesheet" />
+
     <style>
+      :root {
+        --bg-dark: #050505;
+        --bg-card: #121212;
+        --text-main: #ffffff;
+        --text-muted: #a1a1aa;
+        --accent-cyan: #00f2ea;
+        --accent-pink: #ff0050;
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Inter", sans-serif;
       }
 
       body {
-        background-color: #000;
-        color: #fff;
-        line-height: 1.6;
-        padding: 20px;
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        line-height: 1.8;
+        padding: 40px 20px;
       }
 
-      .container {
+      .legal-container {
         max-width: 800px;
-        margin: 0 auto;
-        background: #1a1a1a;
-        padding: 40px;
-        border-radius: 15px;
-        margin-top: 80px;
+        margin: 40px auto;
+        background: var(--bg-card);
+        padding: 50px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Línea decorativa superior */
+      .legal-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--accent-pink),
+          var(--accent-cyan)
+        );
       }
 
       h1 {
-        color: #fe2c55;
-        margin-bottom: 30px;
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 10px;
         text-align: center;
+        color: white;
+      }
+
+      .last-update {
+        text-align: center;
+        color: var(--accent-pink);
+        font-size: 0.9rem;
+        margin-bottom: 40px;
+        font-weight: bold;
       }
 
       h2 {
-        color: #25f4ee;
-        margin: 25px 0 15px 0;
+        color: var(--accent-cyan);
+        font-size: 1.4rem;
+        margin: 30px 0 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
       }
 
       p,
       li {
+        color: var(--text-muted);
         margin-bottom: 15px;
-        color: #ccc;
+        font-size: 1rem;
       }
 
       ul {
         margin-left: 20px;
+        margin-bottom: 20px;
+      }
+      li::marker {
+        color: var(--accent-cyan);
       }
 
       .back-btn {
         display: inline-block;
-        padding: 10px 20px;
-        background: #fe2c55;
+        margin-top: 40px;
+        padding: 12px 30px;
+        background: transparent;
+        border: 2px solid var(--accent-cyan);
         color: white;
         text-decoration: none;
-        border-radius: 25px;
-        margin-top: 20px;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        background: var(--accent-cyan);
+        color: var(--bg-dark);
+        box-shadow: 0 0 20px rgba(0, 242, 234, 0.4);
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        .legal-container {
+          padding: 30px 20px;
+        }
+        h1 {
+          font-size: 2rem;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="legal-container">
       <h1>Términos y Condiciones</h1>
-
-      <p><strong>Última actualización:</strong> [Fecha]</p>
+      <p class="last-update">Última actualización: Noviembre 2025</p>
 
       <h2>1. Aceptación de los Términos</h2>
       <p>
-        Al acceder y utilizar los servicios de TikTalent, aceptas estar sujeto a
-        estos términos y condiciones.
+        Al acceder, navegar y utilizar los servicios de TikTalent, aceptas estar
+        legalmente sujeto a estos términos y condiciones. Si no estás de acuerdo
+        con alguna parte de estos términos, te rogamos no utilizar nuestros
+        servicios.
       </p>
 
       <h2>2. Servicios Ofrecidos</h2>
       <p>
-        TikTalent ofrece asesorías y consultorías personalizadas para el
-        crecimiento en TikTok, incluyendo:
+        TikTalent ofrece asesorías estratégicas y consultorías personalizadas
+        para el crecimiento y monetización en TikTok. Nuestros servicios
+        incluyen, pero no se limitan a:
       </p>
       <ul>
-        <li>Estrategias de contenido</li>
-        <li>Optimización de perfil</li>
-        <li>Técnicas de TikTok Live</li>
-        <li>Planificación de crecimiento</li>
+        <li>Estrategias de contenido y guiones virales.</li>
+        <li>Optimización técnica y visual del perfil.</li>
+        <li>Técnicas avanzadas de venta en TikTok Live.</li>
+        <li>Configuración de TikTok Shop y herramientas de venta.</li>
+        <li>Planificación de crecimiento orgánico y pagado.</li>
       </ul>
 
       <h2>3. Pagos y Reembolsos</h2>
       <p>
-        Los pagos se realizan por anticipado. Ofrecemos reembolso total dentro
-        de los primeros 7 días si no estás satisfecho con el servicio.
+        Todos los servicios se abonan por anticipado para reservar las sesiones.
+        Ofrecemos una <strong>garantía de satisfacción de 7 días</strong>: si
+        dentro de la primera semana no estás satisfecho con la calidad de la
+        información recibida, procesaremos un reembolso total de tu inversión.
       </p>
 
       <h2>4. Propiedad Intelectual</h2>
       <p>
-        Todo el material proporcionado en las asesorías es propiedad intelectual
-        de TikTalent y no puede ser redistribuido.
+        Todo el material educativo, guiones, plantillas y documentos
+        proporcionados durante las asesorías son propiedad intelectual exclusiva
+        de TikTalent. Se otorgan para uso personal de tu negocio y está
+        estrictamente prohibida su redistribución, venta o copia a terceros sin
+        autorización escrita.
       </p>
 
       <h2>5. Limitación de Responsabilidad</h2>
       <p>
-        No garantizamos resultados específicos, ya que estos dependen del
-        esfuerzo y aplicación del cliente.
+        Aunque proveemos estrategias probadas, TikTalent no garantiza resultados
+        numéricos específicos (como número exacto de seguidores o ingresos), ya
+        que estos dependen de la ejecución, constancia y variables externas del
+        algoritmo y del propio cliente.
       </p>
 
       <h2>6. Modificaciones</h2>
       <p>
         Nos reservamos el derecho de modificar estos términos en cualquier
-        momento.
+        momento para adaptarlos a cambios legales o de servicio. Las
+        actualizaciones serán publicadas en esta página.
       </p>
 
-      <a href="index.html" class="back-btn">← Volver al Inicio</a>
+      <div style="text-align: center">
+        <a href="index.html" class="back-btn">← Volver al Inicio</a>
+      </div>
     </div>
   </body>
 </html>
